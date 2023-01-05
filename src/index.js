@@ -1,15 +1,13 @@
 const searchButton = document.querySelector("body main .container #btn-search");
-let userName = document.querySelector("body main .container #input-search").value;
+let userNameInput = document.querySelector("body main .container #input-search");
 
 async function user(userNick) {
-    const response = await fetch(`https://api.github.com/users/${userNick}`, "Token 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");
-    
+    const response = await fetch(`https://api.github.com/users/${userNick}`);
+
     const responseJson = await response.json();
 
     return responseJson;
 }
-
-console.log(await user());
 
 function getUserProfile(userNick) {
     user(userNick).then(
@@ -26,12 +24,8 @@ function getUserProfile(userNick) {
     )
 }
 
-console.log(userName)
-
 searchButton.addEventListener("click", 
     () => {
-        getUserProfile(userName);
+        getUserProfile(userNameInput.value);
     }
 )
-
-
