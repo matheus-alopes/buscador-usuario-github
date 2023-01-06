@@ -29,3 +29,13 @@ searchButton.addEventListener("click",
         getUserProfile(userNameInput.value);
     }
 )
+
+userNameInput.addEventListener("keyup", 
+    (e) => {
+        let key = e.which || e.keyCode;
+        const isEnterKeyPressed = key === 13;
+        if (isEnterKeyPressed) {
+            getUserProfile(userNameInput.value);
+        }
+    }
+)
