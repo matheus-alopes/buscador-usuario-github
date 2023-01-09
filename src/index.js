@@ -1,24 +1,12 @@
+import { getUser } from "./scripts/services/user.js";
+import { getRepositories } from "./scripts/services/repositories.js";
+import { userObject } from "./scripts/objects/userObject.js";
+
 const searchButton = document.querySelector("body main .container #btn-search");
 let userNameInput = document.querySelector("body main .container #input-search");
 
-async function user(userNick) {
-    const response = await fetch(`https://api.github.com/users/${userNick}`);
-
-    const responseJson = await response.json();
-
-    return responseJson;
-}
-
-async function repos(userNick) {
-    const response = await fetch(`https://api.github.com/users/${userNick}/repos`);
-
-    const responseJson = await response.json();
-
-    return responseJson;
-}
-
 function getUserProfile(userNick) {
-    user(userNick).then(
+    getUser(userNick).then(
         userData => {
             let userInfo = 
             `<div class = "info">
@@ -36,7 +24,7 @@ function getUserProfile(userNick) {
 }
 
 function getUserRepositories(userNick) {
-    repos(userNick).then(
+    getRepositories(userNick).then(
         reposData => {
             let repositoriesItens = "";
 
