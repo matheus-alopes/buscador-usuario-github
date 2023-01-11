@@ -8,7 +8,7 @@ const userNameInput = document.querySelector("body main .container #input-search
 
 async function getUserProfile(userNick) {
     const userResponse = await getUser(userNick);
-
+    console.log(userResponse);
     if (userResponse.message === "Not Found") {
         screen.renderNotFound();
         return;

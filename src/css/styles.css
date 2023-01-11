@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color:#24292e;
+  background-color:var(--background-color);
   font-family: "Kumbh Sans", sans-serif;  
   text-align: center;    
   padding-bottom: 100px;
@@ -21,7 +21,7 @@ main {
 .devicon-github-original{
   font-size: 60px;
   margin-bottom: 30px;
-  color: #FFFFFF;
+  color: var(--github-icon-color);
 }
 
 .section{
@@ -32,7 +32,7 @@ main {
   width: 60%; /* se for uma tela menor que 980px vai se adaptar a 70% */
   max-width: 960px; /* quando chegar em 980px para de aumentar */
   box-shadow: rgba(0, 0, 0, 0.3) 0px 25px 50px -12px;
-  background-color: #fff;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,9 +74,10 @@ main {
 }
 
 .container header #btn-search:hover {
-  background-color: hotpink;
+  background-color: var(--primary-color);
   color: #ffffff;
   border-color: #ffffff;
+  transition: 0.2s ease-in-out;
 }
 
 .container .profile-data{
@@ -100,7 +101,7 @@ main {
 .container .profile-data .info img{
   width: 50%;
   border-radius: 50%;
-  border: 10px solid hotpink;
+  border: 10px solid var(--primary-color);
 }
 
 .container .profile-data .info h1{
@@ -138,7 +139,7 @@ main {
 }
 
 .container .profile-data .repositories ul li a:hover{
-  background-color:hotpink;
+  background-color: var(--primary-color);
   color: #fff
 }
 

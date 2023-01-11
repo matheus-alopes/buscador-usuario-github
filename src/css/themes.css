@@ -1,0 +1,23 @@
+/* themes */
+
+    /* Pink theme */
+    body.pink-theme {
+        --primary-color: hotpink;
+        --background-color: #24292e;
+        --github-icon-color: #ffffff;
+    }
+    
+    /* Blue theme */
+    body.blue-theme {
+        --primary-color: #4176ab;
+        --background-color: #24292e;
+        --github-icon-color: #ffffff;
+    }
+    
+    /* Orange theme */
+    body.orange-theme {
+        --primary-color: #ec7e00;
+        --background-color: #d66a30;
+        --github-icon-color: #000000;
+    }
+    
