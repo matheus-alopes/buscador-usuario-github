@@ -1,54 +1,42 @@
 import { getUser } from "./scripts/services/user.js";
 import { getRepositories } from "./scripts/services/repositories.js";
 import { userObject } from "./scripts/objects/userObject.js";
+import { screen } from "./scripts/objects/screen.js";
 
 const searchButton = document.querySelector("body main .container #btn-search");
-let userNameInput = document.querySelector("body main .container #input-search");
+const userNameInput = document.querySelector("body main .container #input-search");
 
-function getUserProfile(userNick) {
-    getUser(userNick).then(
-        userData => {
-            let userInfo = 
-            `<div class = "info">
-                <img src="${userData.avatar_url}" alt="Foto de perfil do usuário" />
-                <div class="data">
-                    <h1>${userData.name ?? "Não possui nome cadastrado 😢"}</h1>
-                    <p>${userData.bio ?? "Não possui bio cadastrada 😢"}</p>
-                                
-                </div>
-            </div>`
+async function getUserProfile(userNick) {
+    const userResponse = await getUser(userNick);
 
-            document.querySelector(".profile-data").innerHTML = userInfo;
-        }
-    )
+    if (userResponse.message === "Not Found") {
+        screen.renderNotFound();
+        return;
+    }
+
+    const repositoriesResponse = await getRepositories(userNick);
+
+    userObject.setInfo(userResponse);
+    userObject.setRepositories(repositoriesResponse);
+
+    screen.renderUser(userObject);
 }
 
-function getUserRepositories(userNick) {
-    getRepositories(userNick).then(
-        reposData => {
-            let repositoriesItens = "";
+function validateEmptyInput(userInput) {
+    if (userInput.value.length === 0) {
+        alert("Preencha o campo com o nome do usuário");
 
-            reposData.forEach(
-                repo => {
-                    repositoriesItens += `<li>
-                                        <a href = "${repo.html_url}" target="_blank">${repo.name}</a>
-                                        </li>`
-                }
-            )
-
-            document.querySelector(".profile-data").innerHTML += 
-            `<div class = "repositories section">
-                <h2>Repositórios</h2>
-                <ul>${repositoriesItens}</ul>
-            </div>`
-        }
-    )
+        return true;
+    }
 }
 
 searchButton.addEventListener("click", 
     () => {
+        if (validateEmptyInput(userNameInput)) {
+            return;
+        }
+            
         getUserProfile(userNameInput.value);
-        getUserRepositories(userNameInput.value);
     }
 )
 
@@ -59,8 +47,11 @@ userNameInput.addEventListener("keyup",
         const isEnterKeyPressed = key === 13;
 
         if (isEnterKeyPressed) {
+            if (validateEmptyInput(userNameInput)) {
+                return;
+            }
+                
             getUserProfile(userNameInput.value);
-            getUserRepositories(userNameInput.value);
         }
     }
 )
