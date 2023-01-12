@@ -1,6 +1,7 @@
 const userObject = {
     avatarUrl: "",
     name:"",
+    nick:"",
     bio:"",
     userNick: "",
     followers:"",
@@ -9,6 +10,7 @@ const userObject = {
     setInfo(gitHubUserInfos) {
         this.avatarUrl = gitHubUserInfos.avatar_url;
         this.name = gitHubUserInfos.name;
+        this.nick = gitHubUserInfos.login;
         this.bio = gitHubUserInfos.bio;
         this.userNick = gitHubUserInfos.login;
         this.followers = gitHubUserInfos.followers;

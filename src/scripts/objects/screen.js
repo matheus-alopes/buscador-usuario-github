@@ -7,7 +7,7 @@ const screen = {
         if (userInfos.followers == 0) {
             followersScreen = `<p>Não possui seguidores 😢</p>`;
         } else {
-            followersScreen = `<p>Seguidores: ${userInfos.followers}`;
+            followersScreen = `<p><span>Seguidores:</span> ${userInfos.followers}`;
         }
         
         let followingScreen = "";
@@ -15,7 +15,7 @@ const screen = {
         if (userInfos.following == 0) {
             followingScreen = `<p>Não segue ninguém 😢</p>`;
         } else {
-            followingScreen = `<p>Seguindo: ${userInfos.following}`;
+            followingScreen = `<p><span>Seguindo:</span> ${userInfos.following}</p>`;
         }
 
         this.userProfile.innerHTML = 
@@ -23,9 +23,12 @@ const screen = {
                 <img src="${userInfos.avatarUrl}" alt="Foto de perfil do usuário" />
                 <div class="data">
                     <h1>${userInfos.name ?? "Não possui nome cadastrado 😢"}</h1>
-                    <p>${userInfos.bio ?? "Não possui bio cadastrada 😢"}</p>
-                    ${followersScreen}
-                    ${followingScreen}                                   
+                    <h3>Nick: ${userInfos.nick}</h3>
+                    <p class="bio">${userInfos.bio ?? "Não possui bio cadastrada 😢"}</p>
+                    <div class="followers-container">
+                        ${followersScreen}
+                        ${followingScreen}    
+                    </div>
                 </div>
             </div>`
 

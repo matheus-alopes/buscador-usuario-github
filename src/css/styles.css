@@ -98,6 +98,18 @@ main {
   width: 50%;
 }
 
+.container .profile-data .info .data .bio {
+  margin: 1rem 0;
+  padding: 0.4rem;
+  background-color: var(--background-bio-color);
+  min-height: 3rem;
+  border-radius: 0.6rem;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
 .container .profile-data .info img{
   width: 50%;
   border-radius: 50%;
@@ -105,7 +117,7 @@ main {
 }
 
 .container .profile-data .info h1{
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -114,6 +126,19 @@ main {
   font-size: 15px;  
   font-weight: 400;
   line-height: 23px;
+}
+
+.container .profile-data .info .data .followers-container p{
+  text-align: start;
+  font-size: 18px;
+}
+
+.container .profile-data .info .data .followers-container p:first-child{
+  margin-bottom: 0.5rem;
+}
+
+.container .profile-data .info .data .followers-container p span {
+  font-weight: bold;
 }
 
 /* REPOSITORIES */
