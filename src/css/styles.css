@@ -172,6 +172,78 @@ main {
   display: none;
 }
 
+/* Atividades */
+
+.container .profile-data .activity {
+  width: 100%;
+}
+
+.container .profile-data .activity h2{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container .profile-data .activity ul{
+  display: flex;
+  flex-direction: column;
+}
+
+.container .profile-data .activity ul li{
+  background-color: var(--background-activity-color);
+  padding: 5px;
+  border-bottom: 1px solid var(--primary-color);
+  cursor: pointer;
+  display: grid;
+  grid-template-areas: "repo-name-header activity-header"
+                        "repo-name activity";
+  grid-template-columns: 3fr 2fr;
+}
+
+.container .profile-data .activity ul li:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.container .profile-data .activity ul li div {
+  padding: 3px;
+}
+
+.container .profile-data .activity ul li .activity-repository-name-container {
+  text-align: start;
+}
+
+.container .profile-data .activity ul li .activity-container {
+  text-align: end;
+}
+
+.container .profile-data .activity ul li .activity-repository-name-container .activity-repository-name-title {
+  grid-area: repo-name-header;
+}
+
+.container .profile-data .activity ul li .activity-repository-name-container .activity-repository-name {
+  grid-area: repo-name;
+}
+
+.container .profile-data .activity ul li .activity-container .activity-title {
+  grid-area: activity-header;
+}
+
+.container .profile-data .activity ul li .activity-container .activity {
+  grid-area: activity;
+}
+
+.container .profile-data .activity ul li .activity-container .activity span {
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.container .profile-data .activity ul li .activity-container .activity-title, .container .profile-data .activity ul li .activity-repository-name-container .activity-repository-name-title {
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
 @media (max-width: 1280px) {
   .container {
     flex-direction: column;

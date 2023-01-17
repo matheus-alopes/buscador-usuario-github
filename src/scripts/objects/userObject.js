@@ -7,6 +7,7 @@ const userObject = {
     followers:"",
     following:"",
     repositories: [],
+    activity: [],
     setInfo(gitHubUserInfos) {
         this.avatarUrl = gitHubUserInfos.avatar_url;
         this.name = gitHubUserInfos.name;
@@ -18,6 +19,9 @@ const userObject = {
     },
     setRepositories(repositories) {
         this.repositories = repositories;
+    },
+    setActivity(activities) {
+        this.activity = activities;
     }
 }
 

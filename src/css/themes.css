@@ -6,6 +6,7 @@
         --background-color: #24292e;
         --github-icon-color: #ffffff;
         --background-bio-color: #24292e3a;
+        --background-activity-color: #24292e03;
     }
     
     /* Blue theme */
@@ -14,6 +15,7 @@
         --background-color: #24292e;
         --github-icon-color: #ffffff;
         --background-bio-color: #24292e3a;
+        --background-activity-color: #24292e03;
     }
     
     /* Orange theme */
@@ -22,5 +24,6 @@
         --background-color: #d66a30;
         --github-icon-color: #000000;
         --background-bio-color: #d66a3038;
+        --background-activity-color: #d66a3003;
     }
     

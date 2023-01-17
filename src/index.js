@@ -1,5 +1,6 @@
 import { getUser } from "./scripts/services/user.js";
 import { getRepositories } from "./scripts/services/repositories.js";
+import { getUserActivity} from "./scripts/services/userActivity.js";
 import { userObject } from "./scripts/objects/userObject.js";
 import { screen } from "./scripts/objects/screen.js";
 
@@ -8,18 +9,25 @@ const userNameInput = document.querySelector("body main .container #input-search
 
 async function getUserProfile(userNick) {
     const userResponse = await getUser(userNick);
-    console.log(userResponse);
+
     if (userResponse.message === "Not Found") {
         screen.renderNotFound();
         return;
     }
 
-    const repositoriesResponse = await getRepositories(userNick);
-
     userObject.setInfo(userResponse);
+
+    const repositoriesResponse = await getRepositories(userNick);
     userObject.setRepositories(repositoriesResponse);
 
+    const userActivityResponse = await getUserActivity(userNick);
+    userObject.setActivity(userActivityResponse);
+
+    console.log(userObject);
+
     screen.renderUser(userObject);
+
+    return
 }
 
 function validateEmptyInput(userInput) {
