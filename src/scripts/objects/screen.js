@@ -39,6 +39,25 @@ const screen = {
                 repositoriesScreen += 
                     `<li>
                         <a href = "${repo.html_url}" target="_blank">${repo.name}</a>
+
+                        <footer>
+                            <div class="repo-forks">
+                                <i class="fa-solid fa-code-fork"></i> 
+                                ${repo.forks}
+                            </div>         
+                            <div class="repo-stars">
+                                <i class="fa-solid fa-star"></i> 
+                                ${repo.stargazers_count}
+                            </div>          
+                            <div class="repo-watchers">
+                                <i class="fa-solid fa-eye"></i> 
+                                ${repo.watchers}
+                            </div>
+                            <div class="repo-language">
+                                <i class="fa-solid fa-code"></i>
+                                ${repo.language}
+                            </div>
+                        </footer>
                     </li>`
             }
         )
