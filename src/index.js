@@ -27,6 +27,49 @@ async function getUserProfile(userNick) {
 
     screen.renderUser(userObject);
 
+    const repositorieForksSign = {
+        elementContainer: document.querySelectorAll(".repo-forks"),
+        captions: document.querySelectorAll(".forks-caption")
+    }
+
+    const repositorieStarsSign = {
+        elementContainer: document.querySelectorAll(".repo-stars"),
+        captions: document.querySelectorAll(".stars-caption")
+    }
+
+    const repositorieWatchersSign = {
+        elementContainer: document.querySelectorAll(".repo-watchers"),
+        captions: document.querySelectorAll(".watchers-caption")
+    }
+
+    const repositorieLanguageSign = {
+        elementContainer: document.querySelectorAll(".repo-language"),
+        captions: document.querySelectorAll(".language-caption")
+    }
+
+    function showCaption(RepositorieInfosContainer) {
+        for(let i = 0; i < RepositorieInfosContainer.elementContainer.length; i++) {
+            RepositorieInfosContainer.elementContainer[i].addEventListener("mouseover",
+                () => {
+                   RepositorieInfosContainer.captions[i].style.opacity = "1"
+                }
+            )
+        }
+
+        for(let i = 0; i < RepositorieInfosContainer.elementContainer.length; i++) {
+            RepositorieInfosContainer.elementContainer[i].addEventListener("mouseout",
+                () => {
+                   RepositorieInfosContainer.captions[i].style.opacity = "0"
+                }
+            )
+        }
+    }
+
+    showCaption(repositorieForksSign);
+    showCaption(repositorieStarsSign);
+    showCaption(repositorieWatchersSign);
+    showCaption(repositorieLanguageSign);
+
     return
 }
 

@@ -44,18 +44,22 @@ const screen = {
                             <div class="repo-forks">
                                 <i class="fa-solid fa-code-fork"></i> 
                                 ${repo.forks}
+                                <div class="repo-footer-caption forks-caption">Forks</div>
                             </div>         
                             <div class="repo-stars">
                                 <i class="fa-solid fa-star"></i> 
                                 ${repo.stargazers_count}
+                                <div class="repo-footer-caption stars-caption">Stars</div>
                             </div>          
                             <div class="repo-watchers">
                                 <i class="fa-solid fa-eye"></i> 
                                 ${repo.watchers}
+                                <div class="repo-footer-caption watchers-caption">Watching</div>
                             </div>
                             <div class="repo-language">
                                 <i class="fa-solid fa-code"></i>
                                 ${repo.language}
+                                <div class="repo-footer-caption language-caption">Language</div>
                             </div>
                         </footer>
                     </li>`
