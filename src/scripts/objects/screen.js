@@ -127,8 +127,6 @@ const screen = {
                     <ul>${activityScreen}</ul>
                 </div>`
         };
-
-        // Falta adicionar renderização para os eventos do tipo CreateEvent
     },
     
     renderNotFound() {

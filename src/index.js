@@ -27,6 +27,7 @@ async function getUserProfile(userNick) {
 
     screen.renderUser(userObject);
 
+    // criando objetos para as caixas de informações dos repositórios
     const repositorieForksSign = {
         elementContainer: document.querySelectorAll(".repo-forks"),
         captions: document.querySelectorAll(".forks-caption")
@@ -47,6 +48,7 @@ async function getUserProfile(userNick) {
         captions: document.querySelectorAll(".language-caption")
     }
 
+    // funcão para mostrar a legenda das informações dos repsitórios, como se fosse um hover
     function showCaption(RepositorieInfosContainer) {
         for(let i = 0; i < RepositorieInfosContainer.elementContainer.length; i++) {
             RepositorieInfosContainer.elementContainer[i].addEventListener("mouseover",
