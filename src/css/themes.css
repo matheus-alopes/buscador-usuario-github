@@ -7,6 +7,7 @@
         --github-icon-color: #ffffff;
         --background-bio-color: #24292e3a;
         --background-activity-color: #24292e03;
+        --repo-info-hover-color: #7849b1;
     }
     
     /* Blue theme */
@@ -16,6 +17,7 @@
         --github-icon-color: #ffffff;
         --background-bio-color: #24292e3a;
         --background-activity-color: #24292e03;
+        --repo-info-hover-color: #7849b1;
     }
     
     /* Orange theme */
@@ -25,5 +27,6 @@
         --github-icon-color: #000000;
         --background-bio-color: #d66a3038;
         --background-activity-color: #d66a3003;
+        --repo-info-hover-color: #dd5331;
     }
     

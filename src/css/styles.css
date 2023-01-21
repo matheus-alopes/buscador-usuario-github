@@ -195,6 +195,11 @@ main {
   position: relative;
 }
 
+.container .profile-data .repositories ul li footer div:hover {
+  background-color: var(--repo-info-hover-color);
+  transition: 0.3s ease-in-out;
+}
+
 .container .profile-data .repositories ul li footer .repo-forks {
   border-bottom-left-radius: 7px;
 }
@@ -260,7 +265,9 @@ main {
 }
 
 .container .profile-data .activity ul li .activity-container {
-  text-align: end;
+  text-align: justify;
+  max-width: 40vw;
+  overflow: hidden;
 }
 
 .container .profile-data .activity ul li .activity-repository-name-container .activity-repository-name-title {
@@ -281,7 +288,6 @@ main {
 
 .container .profile-data .activity ul li .activity-container .activity span {
   font-size: 0.8rem;
-  text-align: center;
   font-weight: bold;
 }
 
@@ -291,7 +297,7 @@ main {
   font-size: 0.8rem;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1380px) {
   .container {
     flex-direction: column;
     width: 90%;
@@ -316,7 +322,11 @@ main {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
+  * {
+    font-size: 97%;
+  }
+  
   main {
     padding: 15% 0;    
   }
@@ -328,7 +338,8 @@ main {
   .container .profile-data .info img,
   .container .profile-data .info .data
   {
-    width: 100%;
+    width: 95%;
     padding: 0;
+    margin: auto;
   }
 }

@@ -92,7 +92,7 @@ const screen = {
 
                             <p class="activity">
                                 <span>Evento do tipo "push":</span> <br>
-                                ${activity.payload.commits[0].message}
+                                <p class="activity-message">${activity.payload.commits[0].message}</p>
                             </p>
                         </div>
                     </li>`
@@ -104,7 +104,7 @@ const screen = {
                         <div class="activity-repository-name-container">
                             <p class="activity-repository-name-title">Repositorio:</p>
                             
-                            <p class="activity-repository-name">${activity.repositoryName}</p>
+                            ${activity.repositoryName}
                         </div>
 
                         <div class="activity-container">
