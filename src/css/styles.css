@@ -291,6 +291,10 @@ main {
   font-weight: bold;
 }
 
+.null-activity {
+  opacity: 0.5;
+}
+
 .container .profile-data .activity ul li .activity-container .activity-title, .container .profile-data .activity ul li .activity-repository-name-container .activity-repository-name-title {
   margin-bottom: 0.5rem;
   opacity: 0.5;
@@ -341,5 +345,9 @@ main {
     width: 95%;
     padding: 0;
     margin: auto;
+  }
+
+  .container .profile-data .activity ul li{
+    grid-template-columns: 1fr 1fr;
   }
 }

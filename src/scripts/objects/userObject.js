@@ -4,8 +4,8 @@ const userObject = {
     nick:"",
     bio:"",
     userNick: "",
-    followers:"",
-    following:"",
+    followers: 0,
+    following: 0,
     repositories: [],
     activity: [],
     setInfo(gitHubUserInfos) {
@@ -13,7 +13,6 @@ const userObject = {
         this.name = gitHubUserInfos.name;
         this.nick = gitHubUserInfos.login;
         this.bio = gitHubUserInfos.bio;
-        this.userNick = gitHubUserInfos.login;
         this.followers = gitHubUserInfos.followers;
         this.following = gitHubUserInfos.following;
     },

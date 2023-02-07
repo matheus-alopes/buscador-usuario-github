@@ -1,22 +1,20 @@
 const screen = {
     userProfile: document.querySelector(".profile-data"),
 
-    renderUser(userInfos) {
-        let followersScreen = "";
+    renderUserFollows(userInfos) {
+        let followersScreen = "", followingScreen = "";;
 
         if (userInfos.followers == 0) {
             followersScreen = `<p>Não possui seguidores 😢</p>`;
         } else {
             followersScreen = `<p><span>Seguidores:</span> ${userInfos.followers}.</p>`;
-        }
-        
-        let followingScreen = "";
+        };
 
         if (userInfos.following == 0) {
             followingScreen = `<p>Não segue ninguém 😢</p>`;
         } else {
             followingScreen = `<p><span>Seguindo:</span> ${userInfos.following}.</p>`;
-        }
+        };
 
         this.userProfile.innerHTML = 
             `<div class = "info">
@@ -31,11 +29,17 @@ const screen = {
                     </div>
                 </div>
             </div>`
-
+    },
+    
+    renderUserRepositories(userInfos) {
         let repositoriesScreen = "";
 
         userInfos.repositories.forEach(
             repo => {
+                if(repo.language == null) {
+                    repo.language = " Indefinido"
+                }
+
                 repositoriesScreen += 
                     `<li>
                         <a href = "${repo.html_url}" target="_blank">${repo.name}</a>
@@ -73,7 +77,9 @@ const screen = {
                     <ul>${repositoriesScreen}</ul>
                 </div>`
         }
-        
+    },
+    
+    renderUserActivity(userInfos) {
         let activityScreen = "";
 
         userInfos.activity.forEach(
@@ -99,6 +105,13 @@ const screen = {
                 }
 
                 if(activity.type == "CreateEvent") {
+                    if(activity.payload.description == null) {
+                       var description = `<p class="null-activity">Não possui desrição</p>`
+
+                    } else {
+                        var description = activity.payload.description;
+                    }
+
                     activityScreen += 
                     `<li>
                         <div class="activity-repository-name-container">
@@ -112,7 +125,7 @@ const screen = {
 
                             <p class="activity">
                                 <span>Evento de criação:</span> <br>
-                                ${activity.payload.description}
+                                ${description}
                             </p>
                         </div>
                     </li>`
@@ -126,13 +139,24 @@ const screen = {
                     <h2>Atividades Recentes</h2>
                     <ul>${activityScreen}</ul>
                 </div>`
-        };
+        } else {
+            this.userProfile.innerHTML +=
+                `<div class = "activity section">
+                    <h3> Sem atividades para mostrar no momento 🤷‍♂️</h3>      
+                </div>`
+        }
+    },
+
+    renderUser(userInfos) {
+        this.renderUserFollows(userInfos);
+        this.renderUserRepositories(userInfos);
+        this.renderUserActivity(userInfos);
     },
     
     renderNotFound() {
         this.userProfile.innerHTML = 
             `<h3>Usuário não encontrado</h3>`
-    }          
+    }       
 }
 
 export {screen};

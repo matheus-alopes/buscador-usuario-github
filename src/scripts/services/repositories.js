@@ -1,7 +1,7 @@
-import { baseUrl, repositoriesQuantity} from "../variables.js";
+import { baseUrl, maxItems} from "../variables.js";
 
 async function getRepositories(userNick) {
-    const response = await fetch(`${baseUrl}/${userNick}/repos?per_page=${repositoriesQuantity}`);
+    const response = await fetch(`${baseUrl}/${userNick}/repos?per_page=${maxItems}`);
 
     const responseJson = await response.json();
 

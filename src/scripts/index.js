@@ -1,8 +1,8 @@
-import { getUser } from "./scripts/services/user.js";
-import { getRepositories } from "./scripts/services/repositories.js";
-import { getUserActivity} from "./scripts/services/userActivity.js";
-import { userObject } from "./scripts/objects/userObject.js";
-import { screen } from "./scripts/objects/screen.js";
+import { getUser } from "./services/user.js";
+import { getRepositories } from "./services/repositories.js";
+import { getUserActivity} from "./services/userActivity.js";
+import { userObject } from "./objects/userObject.js";
+import { screen } from "./objects/screen.js";
 
 const searchButton = document.querySelector("body main .container #btn-search");
 const userNameInput = document.querySelector("body main .container #input-search");
