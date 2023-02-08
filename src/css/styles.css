@@ -173,7 +173,7 @@ main {
 
 .container .profile-data .repositories ul li a:hover{
   background-color: var(--primary-color);
-  color: #fff
+  color: #ffffff;
 }
 
 .container .profile-data .repositories ul li footer {
@@ -195,7 +195,7 @@ main {
   position: relative;
 }
 
-.container .profile-data .repositories ul li footer div:hover {
+.container .profile-data .repositories ul li footer div:not(.repo-footer-caption):hover {
   background-color: var(--repo-info-hover-color);
   transition: 0.3s ease-in-out;
 }
