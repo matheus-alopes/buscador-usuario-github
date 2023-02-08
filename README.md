@@ -4,14 +4,14 @@ Neste projeto, é utilizada a API do GitHbub para selecionar informações chave
 
 ## Conteúdo
 
-- [Visão Geral](#visao-geral)
+- [Visão Geral](#visão-geral)
   - [A Proposta](#a-proposta)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [Meu processo](#meu-processo)
   - [Feito com](#feito-com)
   - [O que Aprendi](#o-que-aprendi)
-  - [Recursos Úteis](#recursos-uteis)
+  - [Recursos Úteis](#recursos-úteis)
 - [Sobre o Autor](#sobre-o-autor)
 - [Agradecimentos](#agradecimentos)
 
@@ -31,13 +31,13 @@ O usuário da página deve ser capaz de:
 
 - Diferentes Temas
 
-<img src="" alt="projeto com tema azul" />
-<img src="" alt="projeto com tema rosa" />
-<img src="" alt="projeto com tema laranja" />
+<img src="src/screenshots/blue-theme-screenshot.png" alt="projeto com tema azul" />
+<img src="src/screenshots/pink-theme-screenshot.png" alt="projeto com tema rosa" />
+<img src="src/screenshots/orange-theme-screenshot.png" alt="projeto com tema laranja" />
 
 - Funcionamento do Projeto
 
-<img src="" alt="projeto funcionando" />
+<img src="src/screenshots/gif-project-working.gif" alt="projeto funcionando" />
 
 ### Links
 
